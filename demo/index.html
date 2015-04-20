@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>ng-paia demo</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body ng-controller="myController">
+  <div class="container">
+    <div class="page-header">
+      <h1>ng-paia demo <small>{{version}}</small></h1>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>PAIA Auth
+          <small>
+            <a href="http://gbv.github.com/paia/paia.html#paia-auth">
+              <i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>
+            </a>
+            <a href="{{paia_url}}/auth">{{paia_url}}/auth</a>
+          </small>
+        </h3>
+        <ul>
+          <li>...</li>
+        </ul>
+        <h3>PAIA Core
+          <small>
+            <a href="http://gbv.github.com/paia/paia.html#paia-core">
+              <i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>
+            </a>
+            <a href="{{paia_url}}/core">{{paia_url}}/core</a>
+          </small>
+        </h3>
+        <ul>
+          <li>...</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>Access</h3>
+        <form>
+          <div class="form-group">
+            <label for="access_token">access_token</label>
+            <input class="form-control" value="{{access_token}}" type="text">
+          </div>
+          <div class="form-group">
+            <label for="patron">patron</label>
+            <input class="form-control" value="{{patron}}" type="text">
+          </div>
+        </form>
+      </div>
+    </div>     
+    <div class="row">
+      <div class="col-md-12">
+        <h3>JSON received</h2>
+        <pre id="json">{{response.data | json}}</pre>
+      </div>
+    </div>
+  </div>  
+  <script src="../src/ng-paia.js"></script>
+  <script src="../src/services/PAIA.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
